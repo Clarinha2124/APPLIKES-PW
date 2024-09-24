@@ -101,9 +101,22 @@ background: var(--green-500);
 color: var(--white);
 font-weight: bold;
 cursor: pointer;
+
+transition: background-color o.1s;
 }
 
 .commentForm button[type=submit]:hover{
 background: var(--green-300);
+
+}
+
+.commentForm footer{
+visibility: hidden;
+max-height: 0;
+}
+
+.commentForm:focus-within footer{
+visibility: visible;
+max-height: none;
 
 }
