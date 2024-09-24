@@ -15,7 +15,7 @@ export function Post(){
                         <span>Web Developer</span>
                     </div>
                 </div>
-                <time title="10 de setembro às 09:44h"datetime="2024/09/10 09:44:00">Publicado à 1h</time>
+                <time title="10 de setembro às 09:44h" dateTime="2024/09/10 09:44:00">Publicado à 1h</time>
             </header>
             <div className={styles.content}>
                 <p>Fala Galera!!</p>
@@ -38,7 +38,7 @@ export function Post(){
              </footer>
             </form>
 
-<div>
+<div className={styles.commentList}>
 <Comment/>
 <Comment/> 
 <Comment/> 
