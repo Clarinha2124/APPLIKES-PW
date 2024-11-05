@@ -1,18 +1,22 @@
 import styles from './Post.module.css';
 import { Comment } from './Comment';
 
-export function Post(){
+
+
+
+export function Post({author}){
+    
     return(
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
                     <img 
                     className={styles.avatar} 
-                    src="https://github.com/Clarinha2124.png"
+                    src={author.avatarUrl}
                     />
                     <div className={styles.authorInfo}>
-                        <strong>Clara Cavalheiro</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.nome}</strong>
+                        <span>{author.cargo}</span>
                     </div>
                 </div>
                 <time title="10 de setembro às 09:44h" dateTime="2024/09/10 09:44:00">Publicado à 1h</time>
