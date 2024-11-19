@@ -1,17 +1,11 @@
 import styles from './Post.module.css';
 import { Comment } from './Comment';
-import { format, formatDistanceToNow } from 'date-fns';
-import ptBr, { ptBR } from 'date-fns/locale/pt-BR';
 
 
 
 
-export function Post({author, dataPublicacao ,content}){
-    const dataFormatada=format(dataPublicacao, "d 'de' LLLL 'às' HH:mm 'h'", {locale: ptBr});
-    const dataRelativaAoPost = formatDistanceToNow(dataPublicacao,{
-        locale: ptBR,
-        addSuffix: true
-    })
+export function Post({author}){
+    
     return(
         <article className={styles.post}>
             <header>
@@ -25,23 +19,16 @@ export function Post({author, dataPublicacao ,content}){
                         <span>{author.cargo}</span>
                     </div>
                 </div>
-                <time title={dataFormatada} dateTime={dataPublicacao.toISOString()}>
-                {dataRelativaAoPost}
-                </time>
-   
+                <time title="10 de setembro às 09:44h" dateTime="2024/09/10 09:44:00">Publicado à 1h</time>
             </header>
             <div className={styles.content}>
-          
-             {
-                content.map(line => {
-                   if (line.type=== 'paragraph'){
-                    return <p>{line.content}</p>
-                   }
-                   else if (line.type=== 'link'){
-                    return <p><a href='#'> {line.content}</a></p>
-                   }
-                })
-             }
+                <p>Fala Galera!!</p>
+                <p>Amanhã teremos viagem a bienal</p>
+                <p>
+                    <a href="#">#bienaldolivro</a>{''}
+                    <a href="#">#eteccidadedolivro</a>{''}
+                    <a href="#">#vempraetec </a>{''}
+                </p>
             </div>
 
             <form className={styles.commentForm}>
